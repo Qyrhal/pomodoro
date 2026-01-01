@@ -12,11 +12,15 @@
   "app": {
     "windows": [
       {
+        "label": "main",
         "title": "pomodoro",
         "width": 800,
-        "height": 600
+        "height": 600,
+        "titleBarStyle": "Transparent",
+        "transparent": true
       }
     ],
+    "macOSPrivateApi": true,
     "security": {
       "csp": null
     }

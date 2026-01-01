@@ -58,11 +58,11 @@ function App() {
   };
 
   return (
-    <main className="min-h-screen bg-black flex items-center justify-center p-4 font-sans text-white">
-      <Card className="w-full max-w-md bg-[#1a1a1a] border-none text-white shadow-2xl">
-        <CardHeader className="text-center space-y-2">
-          <CardTitle className="text-2xl font-bold tracking-tight">Pomodoro Timer</CardTitle>
-          <CardDescription className="text-gray-400 font-medium tracking-widest uppercase text-xs">
+    <main data-tauri-drag-region className="min-h-screen bg-transparent flex items-center justify-center p-4 font-sans text-white">
+      <Card className="w-full max-w-md bg-transparent border-white/10 text-white shadow-none">
+        <CardHeader data-tauri-drag-region className="text-center space-y-2 cursor-default select-none">
+          <CardTitle className="text-2xl font-bold tracking-tight pointer-events-none">Pomodoro Timer</CardTitle>
+          <CardDescription className="text-gray-400 font-medium tracking-widest uppercase text-xs pointer-events-none">
             {mode === "pomodoro" ? "Focus Time" : mode === "short_break" ? "Short Break" : "Long Break"}
           </CardDescription>
         </CardHeader>
@@ -74,36 +74,36 @@ function App() {
           <div className="flex gap-4 w-full justify-center">
             <Button 
               onClick={toggleTimer} 
-              className="bg-white text-black hover:bg-gray-200 font-semibold px-8 py-6 text-lg min-w-[120px]"
+              className="bg-white text-black hover:bg-gray-200 font-semibold px-8 py-6 text-lg min-w-[120px] cursor-pointer"
             >
               {isActive ? "Pause" : "Start"}
             </Button>
             <Button 
               onClick={resetTimer} 
               variant="outline" 
-              className="border-gray-700 text-white hover:bg-gray-800 hover:text-white font-semibold px-8 py-6 text-lg min-w-[120px]"
+              className="border-gray-700 text-white hover:bg-gray-800 hover:text-white font-semibold px-8 py-6 text-lg min-w-[120px] cursor-pointer"
             >
               Reset
             </Button>
           </div>
 
           <Tabs value={mode} onValueChange={handleModeChange} className="w-full">
-            <TabsList className="grid w-full grid-cols-3 bg-[#2a2a2a] text-gray-400">
+            <TabsList className="grid w-full grid-cols-3 bg-black/20 text-gray-400">
               <TabsTrigger 
                 value="pomodoro" 
-                className="data-[state=active]:bg-white data-[state=active]:text-black"
+                className="data-[state=active]:bg-white data-[state=active]:text-black cursor-pointer"
               >
                 Pomodoro
               </TabsTrigger>
               <TabsTrigger 
                 value="short_break"
-                className="data-[state=active]:bg-white data-[state=active]:text-black"
+                className="data-[state=active]:bg-white data-[state=active]:text-black cursor-pointer"
               >
                 Short Break
               </TabsTrigger>
               <TabsTrigger 
                 value="long_break"
-                className="data-[state=active]:bg-white data-[state=active]:text-black"
+                className="data-[state=active]:bg-white data-[state=active]:text-black cursor-pointer"
               >
                 Long Break
               </TabsTrigger>

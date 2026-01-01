@@ -1,7 +1,11 @@
 @import "tailwindcss";
-@import "tw-animate";
+@plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *));
+
+body {
+  background-color: transparent;
+}
 
 .logo.vite:hover {
   filter: drop-shadow(0 0 2em #747bff);
@@ -17,7 +21,7 @@
   font-weight: 400;
 
   color: #0f0f0f;
-  background-color: #f6f6f6;
+  background-color: transparent;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
